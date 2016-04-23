@@ -1,0 +1,10 @@
+This is a simple Rest API for  Messenger app.
+The motivation behind this project was to learn Jax-RS. 
+Concept: User can post a message. a message can have multiple comments from different users.
+Status: Messenger resource is complete. Profile and comment resource are partially implemented.
+
+Note: Since the focus of the project was to learn JAX-RS and not core java concepts like
+ error handling, JDBC database connections. A temp database is implemented as a MAP for 
+quick development. I understand the potential risks as the data structure and recommend using JDBC
+for the purpose. Please refer my jdbc_exaple repo for more on core java concepts. 
+

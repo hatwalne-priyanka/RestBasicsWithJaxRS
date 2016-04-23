@@ -1,7 +1,7 @@
 package org.priyanka.com.messenger.model;
 
 import javax.xml.bind.annotation.XmlRootElement;
-
+//This class is a model for sending responses when exceptions occure
 @XmlRootElement
 public class ErrorMessage {
 	private String errorMessage;

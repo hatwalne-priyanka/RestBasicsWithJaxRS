@@ -9,7 +9,7 @@ import javax.ws.rs.ext.Provider;
 
 import org.priyanka.com.messenger.model.ErrorMessage;
 
-
+//This class ensures all exceptions are caught Ideally impliment a mapper for each exception.
 //@Provider 
 @Produces(MediaType.APPLICATION_JSON)
 public class GenericExceptionMapper implements ExceptionMapper<Throwable>{

@@ -12,7 +12,7 @@ public class ProfileService {
 	
 	public ProfileService() {
 		profiles.put("priyanka", new Profile(1, "priyanka", "priyanka","hatwalne"));
-		profiles.put("shashank", new Profile(2, "shashank", "shashank" ,"boadhankar"));
+		profiles.put("user2", new Profile(2, "user2", "firstname" ,"lastname2"));
 	}
 	
 	 public List<Profile> getAllProfiles(){		 

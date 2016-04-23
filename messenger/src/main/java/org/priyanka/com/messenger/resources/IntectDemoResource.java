@@ -16,23 +16,31 @@ import javax.ws.rs.core.UriInfo;
 @Produces(MediaType.TEXT_PLAIN)
 @Consumes(MediaType.TEXT_PLAIN)
 public class IntectDemoResource {
-  //@MatrixParam : parameter send to url as semicolon separated key value 	
-  //@FormParam : Used to get data from html control. Not widely used.	
-  @GET
-  @Path("/annotations")
-  public String getParamsUsingAnnotation(@MatrixParam("param") String param,
-		                                 @HeaderParam("auth") String auth,
-		                                 @CookieParam("name") String cookie) {  
-	  return "param: " + param + " header: " + auth + " Cookie: " + cookie;
-  }
-  
-  @GET
-  @Path("/context")
-  public String getParamsUsingcontext(@Context UriInfo uriinfo,
-		                              @Context HttpHeaders hdr){ 
-	  String path = uriinfo.getAbsolutePath().toString();
-	  String cookies = hdr.getCookies().toString();
-	  return "path: " + path + " cookies: " + cookies;
-  }
-  
+	// @MatrixParam : parameter send to url as semicolon separated key value
+	// eg: http://example.com/annotations;param=value
+	// @FormParam : Used to get data from html control. Not widely used.
+	// @HeaderParam: Custom header values
+	// @CookieParam: access cookie
+	@GET
+	@Path("/annotations")
+	public String getParamsUsingAnnotation(@MatrixParam("param") String param,
+			@HeaderParam("auth") String auth, @CookieParam("name") String cookie) {
+		return "param: " + param + " header: " + auth + " Cookie: " + cookie;
+	}
+
+	// @context is used to annotates special types of inputs sent while making a
+	// rest request. Mainly used to access all the headers and parameters sent
+	// in the request or when you are not sure what parameter you will
+	// need.UriInfo contains information about the uri that was
+	// requested (eg query param path param absolute path etc)
+	// HttpHeaders give all the Header Information.
+	@GET
+	@Path("/context")
+	public String getParamsUsingcontext(@Context UriInfo uriinfo,
+			@Context HttpHeaders hdr) {
+		String path = uriinfo.getAbsolutePath().toString();
+		String cookies = hdr.getCookies().toString();
+		return "path: " + path + " cookies: " + cookies;
+	}
+
 }

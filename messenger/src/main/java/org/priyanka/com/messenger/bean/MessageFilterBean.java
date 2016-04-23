@@ -2,6 +2,8 @@ package org.priyanka.com.messenger.bean;
 
 import javax.ws.rs.QueryParam;
 
+//This class acts as parameter aggregator for message resource
+
 public class MessageFilterBean {
 	private @QueryParam("year") int year;
     private @QueryParam("start") int start;
